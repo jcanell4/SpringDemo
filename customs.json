@@ -1,0 +1,23 @@
+{
+    "elements": {},
+    "attributes": {
+        "th:text": {
+            "context": "div"
+        },
+        "th:for": {
+            "context": "label"
+        },
+        "th:unless": {
+            "context": "div"
+        },
+        "th:action": {
+            "context": "form"
+        },
+        "th:field": {
+            "context": "input"
+        },
+        "th:fragment": {
+            "context": "div"
+        }
+    }
+}

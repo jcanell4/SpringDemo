@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Response to your will</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    </head>
+    <body>
+        <form id="formReady" action="#" th:action="@{/rethought}" th:object="${userResponse}" method="post">
+            <div id="result" th:fragment="result">
+                <h1 th:text="${message}"></h1>
+                <div th:unless="${ready=='yes'}">
+                        <label th:for="${#ids.next('ready')}" >... or may be now. Yes, I have rethought it</label><input type="checkbox" th:field="*{ready}">            
+                        <input name="submit" value="submit" type="submit" />
+                </div>
+            </div>
+        </form>              
+        <br>
+        <div>
+        Remember, your acts define you!
+        </div>
+        <script>
+(function($){
+  var $form = $('#formReady');
+  $form.on('submit', function(e) {
+    e.preventDefault();
+    $.ajax({
+      url: $form.attr('action'),
+      type: $form.attr('method'),
+      data: $form.serialize(),
+      success: function(response) {
+        $("#result").replaceWith(response);
+      }
+  });
+})
+}(jQuery));        
+        </script>
+    </body>
+</html>

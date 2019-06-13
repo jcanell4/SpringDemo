@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Hello world</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div th:text="${text}">missatge de text</div>
+        <br>
+        <form id="formReady" action="#" th:action="@{/areYouReady}" th:object="${userResponse}" method="post">
+            <div>Are you ready?</div>
+            <input name="ready" value="yes" type="submit" />
+            <input name="ready" value="not" type="submit" />
+        </form>  
+        <script>
+    </body>
+</html>
