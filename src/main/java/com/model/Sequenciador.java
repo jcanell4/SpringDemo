@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package com.model;
 
 /**
  *
  * @author professor
  */
-public interface Realitzable {
-   EstatRealitzacio getEstatRealitzacio();
+public interface Sequenciador {
+    EstatAlumne getSeguent(EstatAlumne estat);
 }
